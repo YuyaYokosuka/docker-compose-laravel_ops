@@ -16,7 +16,8 @@
 
 ## 導入
 - 初回のみ`docker-compose.yml`の`APP_KEY` を適切に設定し直して下さい
-- docker,docker-composeをインストールする（ここはググって下さい）
+- docker,docker-composeをインストールする（ [公式のガイド](https://docs.docker.com/engine/installation/) とかググったりとかして下さい ）
+
 当方バージョン情報
 ```
 $ docker -v
