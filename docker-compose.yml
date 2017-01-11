@@ -11,6 +11,10 @@ services:
       MYSQL_DATABASE: database_name
       MYSQL_USER: database_user
       MYSQL_PASSWORD: password
+    ports:
+      - "3306"
+    expose:
+      - "3306"
   redis:
     image: redis
   memcached:
@@ -35,6 +39,13 @@ services:
       - redis
       - memcached
     environment:
-      DB_HOST: mysql
       APP_DEBUG: 1 #Laravelのエラー制御
       APP_KEY: mwm5RiCU4pnRyPuDzJ7zhisuLq8BJjfV #Laravelのハッシュ、適当に変更して使う
+
+      #DB関係
+      DB_CONNECTION: "mysql"
+      DB_DATABASE: "database_name"
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USERNAME: "database_user"
+      DB_PASSWORD: "password"
