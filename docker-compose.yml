@@ -5,6 +5,7 @@ services:
     volumes:
       - /var/lib/mysql
   mysql:
+    container_name: "mysql"
     image: mysql:5.6
     environment:
       MYSQL_ROOT_PASSWORD: password
@@ -12,25 +13,26 @@ services:
       MYSQL_USER: database_user
       MYSQL_PASSWORD: password
     ports:
-      - "3306"
+      - "3306:3306"
     expose:
       - "3306"
   redis:
+    container_name: "redis"
     image: redis
   memcached:
+    container_name: "memcached"
     image: memcached
   web:
-    container_name: web
+    container_name: "web"
     build: Dockerfiles/nginx/.
     ports:
       - "80:80"
     expose:
       - "80"
-      - "22"
     links:
       - app
   app:
-    container_name: app
+    container_name: "app"
     build: Dockerfiles/php-fpm/.
     volumes:
      - ./application:/var/www/html
