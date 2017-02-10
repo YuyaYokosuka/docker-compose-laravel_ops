@@ -43,6 +43,7 @@ services:
     environment:
       APP_DEBUG: 1 #Laravelのエラー制御
       APP_KEY: mwm5RiCU4pnRyPuDzJ7zhisuLq8BJjfV #Laravelのハッシュ、適当に変更して使う
+      APP_ENV: develop
 
       #DB関係
       DB_CONNECTION: "mysql"
